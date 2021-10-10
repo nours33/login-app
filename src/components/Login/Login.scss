@@ -1,0 +1,29 @@
+.container-login {
+    .title {
+        h2 {
+            text-align: center;
+            color: $main-color;
+            margin-bottom: 30px;
+        }
+    }
+    .container-button {
+        display: flex;
+        justify-content: center;
+        button {
+            width: 150px;
+            padding: 8px 20px;
+            text-align: center;
+            border: none;
+            background: $bg-color;
+            border-radius: 5px;
+            font-weight: 400;
+            margin-top: 50px;
+            font-size: 16px;
+            &:hover {
+                cursor: pointer;
+                background: $main-color;
+
+            }
+        }
+    }
+}
