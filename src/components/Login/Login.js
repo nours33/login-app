@@ -29,12 +29,12 @@ class Login extends Component {
         event.preventDefault();
 
         AuthService.login(this.state.username, this.state.password).then(response => {
-            
+
             if (response.token) {
                 this.setState({ goToApp: true })
             }
             else {
-                this.setState({message: response.message})
+                this.setState({ message: "Quelque chose ne c'est pas passé comme prévu. Réessayer !" })
             }
         })
 
@@ -42,6 +42,7 @@ class Login extends Component {
     }
 
     render() {
+
         if (this.state.goToApp) {
             return <Redirect push to={`/pseudo/${this.state.username}`} />
         }
@@ -58,7 +59,8 @@ class Login extends Component {
                         </h2>
                     </div>
                     <div className="message-error">
-                        {this.state.message}
+                        <div dangerouslySetInnerHTML={{ __html: this.state.message }} />
+
                     </div>
                     <div className="container-inputs">
 
